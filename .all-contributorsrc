@@ -212,6 +212,33 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "bloodywing",
+      "name": "Pierre",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1392097?v=4",
+      "profile": "https://digitalpinup.art",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "imankulov",
+      "name": "Roman Imankulov",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75075?v=4",
+      "profile": "https://roman.pt",
+      "contributions": [
+        "test"
+      ]
+    },
+    {
+      "login": "rhymiz",
+      "name": "Lemi Boyce",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7029352?v=4",
+      "profile": "https://github.com/rhymiz",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

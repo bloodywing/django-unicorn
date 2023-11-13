@@ -1,5 +1,4 @@
 import { $, getCsrfToken, hasValue, isFunction } from "./utils.js";
-import { getMorphdomOptions } from "./morphdom/2.6.1/options.js";
 
 /**
  * Calls the message endpoint and merges the results into the document.
@@ -136,7 +135,7 @@ export function send(component, callback) {
       component.hash = responseJson.hash;
 
       let parent = responseJson.parent || {};
-      const rerenderedComponent = responseJson.dom || {};
+      const rerenderedComponent = responseJson.dom || "";
       const partials = responseJson.partials || [];
       const { checksum } = responseJson;
 
@@ -171,10 +170,9 @@ export function send(component, callback) {
           }
 
           if (parent.dom) {
-            component.morphdom(
+            component.morpher.morph(
               parentComponent.root,
               parent.dom,
-              getMorphdomOptions(component.reloadScriptElements)
             );
           }
 
@@ -216,10 +214,9 @@ export function send(component, callback) {
           }
 
           if (targetDom) {
-            component.morphdom(
+            component.morpher.morph(
               targetDom,
               partial.dom,
-              getMorphdomOptions(component.reloadScriptElements)
             );
           }
         }
@@ -229,10 +226,9 @@ export function send(component, callback) {
           component.refreshChecksum();
         }
       } else {
-        component.morphdom(
+        component.morpher.morph(
           component.root,
           rerenderedComponent,
-          getMorphdomOptions(component.reloadScriptElements)
         );
       }
 
